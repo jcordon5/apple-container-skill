@@ -36,7 +36,7 @@ The interesting part is *where* the skill earns its keep. On tasks that mirror D
 ## 🚀 Install
 
 ```bash
-npx skill add https://github.com/jcordon5/apple-container-skill
+npx skills add https://github.com/jcordon5/apple-container-skill
 ```
 
 Or install it manually by cloning into your skills directory:
