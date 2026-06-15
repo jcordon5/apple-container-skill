@@ -1,19 +1,17 @@
 ---
 name: apple-container
 description: >-
-  Expert guidance for Apple's `container` CLI — the open-source tool that runs Linux
-  containers and persistent Linux "container machines" as lightweight VMs on Apple
-  silicon Macs (an alternative to Docker Desktop / Colima / Lima / OrbStack). Use this
-  skill WHENEVER the user wants to run, build, or manage Linux containers or a Linux
-  dev environment on a Mac and is using — or could use — Apple `container`. Trigger on:
-  "Apple container", "container CLI", "run a container on my Mac without Docker",
-  "container machine", "Linux VM on Mac silicon", "correr un contenedor en mi Mac",
-  "máquina/entorno Linux en Mac", "instalar container de Apple", `container run`,
-  `container build`, `container machine create`, `container system start`, publishing
-  ports, volumes, networks, or registries with this tool, or porting a Docker/`docker run`
-  workflow to Apple `container`. Also use it to diagnose why containers, ports, DNS, or
-  networking misbehave on macOS. Do NOT use it for Docker Desktop/Podman/Kubernetes-specific
-  questions, or for plain Dockerfile authoring that has nothing to do with running on a Mac.
+  Expert guidance for Apple's `container` CLI. the open-source tool for running,
+  building, and managing Linux containers and persistent Linux "container machines"
+  as lightweight VMs on Apple silicon Macs. Use when the user wants to run containers
+  or Linux dev environments on a Mac with Apple `container`, replace Docker Desktop,
+  Colima, Lima, or OrbStack, use commands like `container run`, `container build`,
+  `container machine create`, or `container system start`, or configure ports,
+  volumes, networks, registries, DNS, or container networking on macOS. Also use for
+  diagnosing Apple `container` runtime, VM, port, DNS, or networking issues. Do not
+  use for Docker Desktop, Podman, Kubernetes-specific workflows, or generic Dockerfile
+  authoring unrelated to Apple `container` on Mac.
+
 ---
 
 # Apple `container` expert
