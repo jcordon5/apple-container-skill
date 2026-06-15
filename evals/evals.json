@@ -1,0 +1,37 @@
+{
+  "skill_name": "apple-container",
+  "evals": [
+    {
+      "id": 0,
+      "name": "postgres-no-docker",
+      "prompt": "Tengo un MacBook Pro M3 y quiero levantar una base de datos PostgreSQL para desarrollo local, sin instalar Docker Desktop. Me dijeron que Apple tiene una herramienta de línea de comandos llamada container. ¿Cómo lo hago, paso a paso? Que los datos no se pierdan al reiniciar el contenedor y poder conectarme desde mi Mac.",
+      "expected_output": "Step-by-step using Apple `container`: check/install + `container system start`, `container run -d` for postgres with `-e POSTGRES_PASSWORD`, a named volume `-v` for persistence, `-p 5432:5432` to reach from host. Should note this is the Apple tool (not Docker), and ideally flag macOS-version/networking nuance and how to connect (published port).",
+      "files": [],
+      "assertions": []
+    },
+    {
+      "id": 1,
+      "name": "persistent-linux-machine",
+      "prompt": "Quiero un entorno de desarrollo Linux Ubuntu persistente en mi Mac con Apple silicon, donde mi carpeta de proyectos del Mac esté disponible dentro de Linux y pueda usar systemd para correr servicios. Que sobreviva reinicios. ¿Cómo lo configuro con la herramienta container de Apple?",
+      "expected_output": "Recommends a CONTAINER MACHINE (`container machine create`), not a plain container, explaining why. Covers home-dir auto-mount + host user, persistence across stop/start, and that systemd needs a systemd-enabled image (BYO Dockerfile with /sbin/init). Mentions `machine run`, set-default, resize via `machine set`.",
+      "files": [],
+      "assertions": []
+    },
+    {
+      "id": 2,
+      "name": "multiarch-build-publish",
+      "prompt": "Construí una app en Node y necesito una imagen de contenedor que corra tanto en Macs M-series como en servidores x86-64. ¿Cómo la construyo multiplataforma y la publico a mi registry privado en registry.miempresa.com usando la herramienta container de Apple?",
+      "expected_output": "`container build --arch arm64 --arch amd64 -t ...`, notes amd64 runs via Rosetta on Apple silicon, then `container registry login registry.miempresa.com`, tag if needed, and `container image push`. Should not invent docker/buildx; uses container CLI flags correctly.",
+      "files": [],
+      "assertions": []
+    },
+    {
+      "id": 3,
+      "name": "networking-broken-troubleshoot",
+      "prompt": "Levanté un contenedor nginx con `container run -d nginx` en mi Mac, pero otro contenedor no le puede hacer curl y tampoco lo veo en http://localhost. ¿Qué está pasando y cómo lo arreglo?",
+      "expected_output": "Diagnoses: no port published (need `-p 8080:80` to reach from host) and container-to-container traffic / per-container IPs — flags the macOS 15 vs macOS 26 limitation (cross-container networking and `--network` need macOS 26). Mentions checking `container ls` for the IP and binding to 0.0.0.0. Accurate, Mac-specific reasoning rather than generic Docker advice.",
+      "files": [],
+      "assertions": []
+    }
+  ]
+}
